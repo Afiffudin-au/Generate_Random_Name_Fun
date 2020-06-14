@@ -61,29 +61,10 @@ function Generate_Name(){
     return;
   }else{
     for(let i = 1; i<=number;i++){ 
-      const randomNumber = Math.round(Math.random()* arr[0].length);
-      
-      if(arr[0][randomNumber-i]!=undefined){
-        string += `${i} .${arr[0][randomNumber]} <br>`
-        //fill array
-        tempArr.push(Array.from(arr[0][randomNumber-i].split(",")));
-      } 
-      if(arr[0][randomNumber-i]==undefined){
-        const randomNumber1 = Math.round(Math.random()* arr[0].length);    
-        if(arr[0][randomNumber1]!=undefined){ 
-          string += `${i} .${arr[0][randomNumber1]} <br>`
-          //fill array
-          tempArr.push(Array.from(arr[0][randomNumber1].split(",")));  
-        }
-        if(arr[0][randomNumber1]==undefined){
-          const randomNumber2 = Math.round(Math.random()* arr[0].length);
-          if(arr[0][randomNumber2]!=undefined){
-            string += `${i} .${arr[0][randomNumber2]} <br>`
-            //fill array
-            tempArr.push(Array.from(arr[0][randomNumber2].split(",")));
-          }            
-        }
-      }      
+      const randomNumber = Math.floor(Math.random()* arr[0].length);
+      string += `${i} .${arr[0][randomNumber]} <br>`
+      //fill array
+      tempArr.push(Array.from(arr[0][randomNumber].split(",")));
    }
   }
  content.innerHTML = string; 
